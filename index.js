@@ -7,12 +7,18 @@ import db from "./config/database.js";
 // Import router
 import Router from "./routes/route.js";
 
+// import bodyParser
+import bodyParser from "body-parser";
+
 // Init express
 const app = express();
 // use express json
 app.use(express.json());
 // use cors
 app.use(cors());
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // Testing database connection
 try {
