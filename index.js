@@ -9,6 +9,9 @@ import Router from "./routes/route.js";
 // Import Body Parser
 import bodyParser from "body-parser";
 
+// import bodyParser
+import bodyParser from "body-parser";
+
 // Init express
 const app = express();
 // use express json
@@ -16,6 +19,9 @@ app.use(express.json());
 // use cors
 app.use(cors());
 // use body parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
