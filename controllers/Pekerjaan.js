@@ -1,18 +1,18 @@
-// Import model Product
+// Import model ProductUser
 // import User from "../models/User.js";
 import Model from "../models/Index.js";
 
 // Create product baru
-export const createUser = async (req, res) => {
+export const createPekerjaan = async (req, res) => {
     try {
-        const user = await Model.User.create(req.body);
+        const pekerjaan = await Model.Pekerjaan.create(req.body);
         res.status(200).json({
-            message: "Data User Berhasil Ditambahkan",
-            data : user
+            message: "Data Pekerjaan Berhasil Ditambahkan",
+            data : pekerjaan
         });
     } catch (err) {
       res.status(404).json({
-          "message": "Data User Gagal Diupdate"
+          "message": "Data Pekerjaan Gagal Diupdate"
       });
         console.log(err);
     }
@@ -20,34 +20,34 @@ export const createUser = async (req, res) => {
 
 
 // Get semua product
-export const getUser = async (req, res) => {
+export const getPekerjaan = async (req, res) => {
     try {
-        const user = await Model.User.findAll();
-        res.status(200).send(user);
+        const pekerjaan = await Model.Pekerjaan.findAll();
+        res.status(200).send(pekerjaan);
     } catch (err) {
         console.log(err);
     }
 }
 
 // Get product berdasarkan id
-export const getUserById = async (req, res) => {
+export const getPekerjaanById = async (req, res) => {
     try {
-        const user = await Model.User.findOne({
+        const pekerjaan = await Model.Pekerjaan.findOne({
             where: {
                 id: req.params.id
             }
         });
-        if (user === null) {
+        if (pekerjaan === null) {
           console.log('Not found!');
           res.status(404).json({
               "message": "Data Tidak Ditemukan"
           });
         } else {
-          res.status(200).send(user);
+          res.status(200).send(pekerjaan);
         }
     } catch (err) {
       res.status(404).json({
-          "message": "Data User Gagal Diupdate"
+          "message": "Data Pekerjaan Gagal Diupdate"
       });
         console.log(err);
     }
@@ -56,63 +56,63 @@ export const getUserById = async (req, res) => {
 
 
 // Update product berdasarkan id
-export const updateUser = async (req, res) => {
+export const updatePekerjaan = async (req, res) => {
     try {
-        const user = await Model.User.findOne({
+        const pekerjaan = await Model.Pekerjaan.findOne({
             where: {
                 id: req.params.id
             }
         });
-        if (user === null) {
+        if (pekerjaan === null) {
           console.log('Not found!');
           res.status(404).json({
-              "message": "Data User Gagal Diupdate"
+              "message": "Data Pekerjaan Gagal Diupdate"
           });
         } else {
-          await Model.User.update(req.body, {
+          await Model.Pekerjaan.update(req.body, {
               where: {
                   id: req.params.id
               }
           });
           res.status(200).json({
-              "message": "Data User Berhasil Diupdate"
+              "message": "Data Pekerjaan Berhasil Diupdate"
           });
         }
 
     } catch (err) {
       res.status(404).json({
-          "message": "Data User Gagal Diupdate"
+          "message": "Data Pekerjaan Gagal Diupdate"
       });
         console.log(err);
     }
 }
 
 // Delete product berdasarkan id
-export const deleteUser = async (req, res) => {
+export const deletePekerjaan = async (req, res) => {
     try {
-        const user = await Model.User.findOne({
+        const pekerjaan = await Model.Pekerjaan.findOne({
             where: {
                 id: req.params.id
             }
         });
-        if (user === null) {
+        if (pekerjaan === null) {
           console.log('Not found!');
           res.status(404).json({
-              "message": "Data User Gagal Diupdate"
+              "message": "Data Pekerjaan Gagal Diupdate"
           });
         } else {
-          await Model.User.destroy({
+          await Model.Pekerjaan.destroy({
               where: {
                   id: req.params.id
               }
           });
           res.status(200).json({
-              "message": "Data User Berhasil Di Hapus"
+              "message": "Data Pekerjaan Berhasil Di Hapus"
           });
         }
     } catch (err) {
       res.status(404).json({
-          "message": "Data User Gagal Diupdate"
+          "message": "Data Pekerjaan Gagal Diupdate"
       });
         console.log(err);
     }
