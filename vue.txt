@@ -1,0 +1,7 @@
+a href = router link
+axios submit form ke api
+
+https://santrikoding.com/tutorial-vuejs-dan-expressjs-1-membuat-restful-api-di-expressjs
+https://santrikoding.com/tutorial-vuejs-dan-expressjs-3-installasi-dan-konfigurasi-vue-router
+
+https://mfikri.com/artikel/nodejs-express-sequelize
